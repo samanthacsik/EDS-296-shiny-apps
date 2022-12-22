@@ -1,6 +1,7 @@
 # load packages
 library(palmerpenguins)
 library(tidyverse)
+library(DT)
 
 # filter data for body masses
 body_mass_df <- penguins |> 
@@ -18,3 +19,12 @@ ggplot(na.omit(body_mass_df),
   theme_minimal() +
   theme(legend.position = c(0.85, 0.2),
         legend.background = element_rect(color = "white"))
+
+# years filtered 
+years_df <- penguins |> 
+  filter(year %in% c("2007", "2008"))
+
+# create DT::dataTable
+DT::datatable(years_df,
+              options = list(pagelength = 10),
+              rownames = FALSE)
