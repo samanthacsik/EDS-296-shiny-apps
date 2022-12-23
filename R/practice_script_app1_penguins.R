@@ -1,13 +1,19 @@
-# load packages
+#..........................load packages.........................
 library(palmerpenguins)
 library(tidyverse)
 library(DT)
 
-# filter data for body masses
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                            penguin scatterplot                           ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# create widget to filter for range of penguin body masses
+
+#...............practice filtering for body masses...............
 body_mass_df <- penguins |> 
   filter(body_mass_g %in% 3000:4000)
 
-# create plot
+#...................plot filtered penguin data...................
 ggplot(na.omit(body_mass_df), 
        aes(x = flipper_length_mm, y = bill_length_mm, 
            color = species, shape = species)) +
@@ -20,11 +26,17 @@ ggplot(na.omit(body_mass_df),
   theme(legend.position = c(0.85, 0.2),
         legend.background = element_rect(color = "white"))
 
-# years filtered 
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                            penguin DT datatable                          ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# create widget to select years
+
+#..................practice filtered for years...................
 years_df <- penguins |> 
   filter(year %in% c("2007", "2008"))
 
-# create DT::dataTable
+#......................create DT datatable.......................
 DT::datatable(years_df,
               options = list(pagelength = 10),
               rownames = FALSE)
