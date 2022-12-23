@@ -1,20 +1,28 @@
-# https://community.rstudio.com/t/navigate-inputpicker-list-with-arrow-keys/71101/2
+# app.R
+library(shiny)
 
-(require(shiny))
-(require(shinyjs))
-(require(V8))
-jscode <- "
-shinyjs.init = function() {
-  $(document).keypress(function(e) { alert('Key pressed: ' + e.which); });
-}"
-
-shinyApp(
-  ui = fluidPage(
-    useShinyjs(),
-    extendShinyjs(text = jscode),
-    "Press any key"
-  ),
-  server = function(input, output) {}
+ui<- shinyUI(
+  fluidPage(
+    title = "Footer example App",
+    sidebarLayout(
+      sidebarPanel(
+        "sidebar",
+        selectInput(
+          "pet",
+          "Pet", 
+          c("Cat", "Dog", "Fish")
+        )
+      ),
+      mainPanel("hello world")
+    ),
+    # WHERE YOUR FOOTER GOES
+    hr(),
+    print("~~~my disclaimer~~~~")
+  )
 )
-# combine UI & server into an app ----
-shinyApp(ui = ui, server = server)
+
+server <- function(input, output) {
+  # empty for minimal example
+}
+
+shinyApp(ui=ui, server = server)

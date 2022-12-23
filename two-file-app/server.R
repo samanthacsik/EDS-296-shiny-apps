@@ -1,5 +1,19 @@
 server <- function(input, output) {
   
+  # render LTER images ----
+  output$lter_img <- renderImage({
+    
+    if(input$lter_img_buttons == "Andrews Forest LTER"){
+      list(src = "www/andrews_forest_lter.png", height = 240, width = 300,
+           alt = "")
+    }
+    else if(input$lter_img_buttons == "Palmer Station LTER"){
+      list(src = "www/palmer_lter.png", height = 240, width = 300,
+           alt ="")
+    }
+    
+  }, deleteFile = FALSE)
+  
   # filter for channel types ----
   trout_filtered_df <-reactive({
     

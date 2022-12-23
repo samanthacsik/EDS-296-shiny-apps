@@ -3,17 +3,55 @@ ui <- fluidPage(
   # navbar page ----
   navbarPage(
     
-    "My App Title",
+    "LTER Animal Data Explorer",
     
     # (Page 1) intro tabPanel ----
     tabPanel(title = "About this App",
-      
-      "background info will go here" # REPLACE THIS WITH CONTENT
-      
+             
+             # intro text fluidRow ----
+             fluidRow(
+
+               # use columns to create white space on sides
+               column(1),
+               column(10, includeMarkdown("text/about.md")),
+               column(1),
+               
+               # headerPanel(""), # create some space between text and photos
+               # 
+               # # sidebarLayout for lter images ----
+               # sidebarLayout(
+               #   
+               #   # radioButtons sidebarPanel ----
+               #   sidebarPanel(
+               #     
+               #     radioButtons(inputId = "lter_img_buttons",
+               #                  label = "Choose an LTER to display a photo from one of the featured sites:",
+               #                  choices = c("Andrews Forest LTER",
+               #                              "Palmer Station LTER"),
+               #                  selected = "Andrews Forest LTER")
+               #     
+               #   ), # END radioButtons sidebarPanel
+               #   
+               #   # lter image mainPanel ----
+               #   mainPanel(
+               #     
+               #     imageOutput(outputId = "lter_img")
+               #     
+               #   ) # END lter image mainPanel
+               #   
+               # ) # END sidebarLayout
+               
+             ), # END intro text fluidRow
+             
+             hr(), # creates light gray horizontal line
+             
+             # footer text ----
+             includeMarkdown("text/footer.md")
+    
     ), # END (Page 1) intro tabPanel
     
     # (Page 2) data viz tabPanel ----
-    tabPanel(title = "Animal Data Explorer",
+    tabPanel(title = "Explore the Data",
       
       # tabsetPanel to contain tabs for data viz ----
       tabsetPanel(
@@ -46,7 +84,7 @@ ui <- fluidPage(
                    # trout plot mainPanel ----
                    mainPanel(
                      
-                     plotOutput(outputId = "trout_scatterplot")
+                     plotOutput(outputId = "trout_scatterplot") |> withSpinner(color = "#006792", type = 1)
                      
                    ) # END trout plot mainPanel
                    
@@ -79,7 +117,7 @@ ui <- fluidPage(
                    # penguin plot mainPanel ----
                    mainPanel(
                      
-                    plotOutput(outputId = "flipperLength_histogram")
+                    plotOutput(outputId = "flipperLength_histogram") |> withSpinner(color = "#006792", type = 1)
                      
                    ) # END penguin plot mainPanel
                    

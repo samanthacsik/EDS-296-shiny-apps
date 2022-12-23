@@ -5,6 +5,7 @@ library(palmerpenguins)
 library(tidyverse)
 library(lubridate)
 library(shinyWidgets)
+library(shinycssloaders)
 
 # DATA WRANGLING ----
 
