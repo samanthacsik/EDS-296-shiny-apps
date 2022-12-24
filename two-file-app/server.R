@@ -1,29 +1,15 @@
 server <- function(input, output) {
   
-  # render LTER images ----
-  output$lter_img <- renderImage({
-    
-    if(input$lter_img_buttons == "Andrews Forest LTER"){
-      list(src = "www/andrews_forest_lter.png", height = 240, width = 300,
-           alt = "")
-    }
-    else if(input$lter_img_buttons == "Palmer Station LTER"){
-      list(src = "www/palmer_lter.png", height = 240, width = 300,
-           alt ="")
-    }
-    
-  }, deleteFile = FALSE)
-  
   # filter for channel types ----
   trout_filtered_df <-reactive({
     
-    validate(
-      need(length(input$channel_type_input) > 0, "Please select at least one channel type to visualize data for.") 
-    )
-    
-    validate(
-      need(length(input$section_input) > 0, "Please select at least one section (clear cut forest or old growth forest) to visualize data for.")
-    )
+    # validate(
+    #   need(length(input$channel_type_input) > 0, "Please select at least one channel type to visualize data for.") 
+    # )
+    # 
+    # validate(
+    #   need(length(input$section_input) > 0, "Please select at least one section (clear cut forest or old growth forest) to visualize data for.")
+    # )
     
       clean_trout |> 
         filter(channel_type %in% c(input$channel_type_input)) |> 
@@ -50,9 +36,9 @@ server <- function(input, output) {
   # filter for island ----
   island_df <- reactive({
     
-    validate(
-      need(length(input$penguin_island) > 0, "Please select at least one island to visualize data for.")
-    )
+    # validate(
+    #   need(length(input$penguin_island) > 0, "Please select at least one island to visualize data for.")
+    # )
     
     penguins %>%
       filter(island == input$penguin_island)

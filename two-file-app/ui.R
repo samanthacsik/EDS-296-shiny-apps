@@ -7,7 +7,7 @@ ui <- fluidPage(
     
     # (Page 1) intro tabPanel ----
     tabPanel(title = "About this App",
-             
+            
              # intro text fluidRow ----
              fluidRow(
 
@@ -15,31 +15,6 @@ ui <- fluidPage(
                column(1),
                column(10, includeMarkdown("text/about.md")),
                column(1),
-               
-               # headerPanel(""), # create some space between text and photos
-               # 
-               # # sidebarLayout for lter images ----
-               # sidebarLayout(
-               #   
-               #   # radioButtons sidebarPanel ----
-               #   sidebarPanel(
-               #     
-               #     radioButtons(inputId = "lter_img_buttons",
-               #                  label = "Choose an LTER to display a photo from one of the featured sites:",
-               #                  choices = c("Andrews Forest LTER",
-               #                              "Palmer Station LTER"),
-               #                  selected = "Andrews Forest LTER")
-               #     
-               #   ), # END radioButtons sidebarPanel
-               #   
-               #   # lter image mainPanel ----
-               #   mainPanel(
-               #     
-               #     imageOutput(outputId = "lter_img")
-               #     
-               #   ) # END lter image mainPanel
-               #   
-               # ) # END sidebarLayout
                
              ), # END intro text fluidRow
              
@@ -84,7 +59,7 @@ ui <- fluidPage(
                    # trout plot mainPanel ----
                    mainPanel(
                      
-                     plotOutput(outputId = "trout_scatterplot") |> withSpinner(color = "#006792", type = 1)
+                     plotOutput(outputId = "trout_scatterplot") # |> withSpinner(color = "#006792", type = 1)
                      
                    ) # END trout plot mainPanel
                    
@@ -117,7 +92,7 @@ ui <- fluidPage(
                    # penguin plot mainPanel ----
                    mainPanel(
                      
-                    plotOutput(outputId = "flipperLength_histogram") |> withSpinner(color = "#006792", type = 1)
+                    plotOutput(outputId = "flipperLength_histogram") # |> withSpinner(color = "#006792", type = 1)
                      
                    ) # END penguin plot mainPanel
                    
