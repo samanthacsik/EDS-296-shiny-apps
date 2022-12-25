@@ -1,14 +1,12 @@
 #..........................load packages.........................
 library(lterdatasampler)
-library(tidyverse)
-library(lubridate)
-library(lterpalettefinder)
 library(palmerpenguins)
+library(tidyverse)
+# library(lubridate)
 
 #..............custom ggplot theme (add to global.R).............
 myCustomTheme <- theme_light() +
-  theme(#text = element_text(family = "mono"), 
-    axis.text = element_text(color = "black", size = 12),
+  theme(axis.text = element_text(color = "black", size = 12),
     axis.title = element_text(size = 14, face = "bold"),
     legend.title = element_text(size = 14, face = "bold"),
     legend.text = element_text(size = 13),
@@ -39,10 +37,9 @@ clean_trout <- and_vertebrates |>
     section == "CC" ~ "clear cut forest",
     section == "OG" ~ "old growth forest"
   )) |> 
-  mutate(year = as_factor(year)) |> 
   drop_na()
 
-#.................practiced filtering trout data.................
+#.................practice filtering trout data..................
 trout_filtered_df <- clean_trout |> 
   filter(channel_type %in% c("pool", "rapid")) |> 
   filter(section %in% c("clear cut forest"))
@@ -80,41 +77,4 @@ ggplot(na.omit(island_df), aes(x = flipper_length_mm, fill = species)) +
        fill = "Penguin species") +
   myCustomTheme
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##                                    Bison                                 ----
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-# # create widget to select years (1994-2020)
-# 
-# #..............wrangle bison data (add to global.R)..............
-# clean_bison <- knz_bison |> 
-#   select(year = rec_year, sex = animal_sex, animal_weight) |> 
-#   mutate(year = as_factor(year)) |> 
-#   mutate(sex = case_when(
-#     sex == "F" ~ "Female",
-#     sex == "M" ~ "Male"
-#   ))
-# 
-# #........................plot bison data.........................
-# ggplot(clean_bison, aes(x = animal_weight, fill = sex)) +
-#   geom_histogram() +
-#   scale_fill_manual(values = c("Female" = "#85A609", "Male" = "#2D3700")) +
-#   labs(x = "Bison weight (lbs)", y = "Count", fill = "Sex") +
-#   myCustomTheme
-
-
+# ggsave("penguin_plot.png", width = 8, units = "in")
