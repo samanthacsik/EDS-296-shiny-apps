@@ -3,13 +3,13 @@ server <- function(input, output) {
   # filter for channel types ----
   trout_filtered_df <- reactive({
 
-    # validate(
-    #   need(length(input$channel_type_input) > 0, "Please select at least one channel type to visualize data for.")
-    # )
-    #
-    # validate(
-    #   need(length(input$section_input) > 0, "Please select at least one section (clear cut forest or old growth forest) to visualize data for.")
-    # )
+    validate(
+      need(length(input$channel_type_input) > 0, "Please select at least one channel type to visualize data for.")
+    )
+
+    validate(
+      need(length(input$section_input) > 0, "Please select at least one section (clear cut forest or old growth forest) to visualize data for.")
+    )
 
       clean_trout |>
         filter(channel_type %in% c(input$channel_type_input)) |>
@@ -33,19 +33,19 @@ server <- function(input, output) {
 
   },
   
-  # alt = "A scatterplot of trout lengths (mm) on the x-axis, trout weights (g) on the y-axis, and data points colored and shaped based on the water channel type from which they were collected."
+  alt = "A scatterplot of the relationship between cutthroat trout lengths (mm) (x-axis) and weights (g) (y-axis), with data points colored and shaped based on the water channel type from which they were collected. Trout tend to be longer, but weight less in waterways within the old growth forest. Trout tend to be shorter, but weight more in waterways within the clear cut forest."
   
   )
   
   # filter for island ----
   island_df <- reactive({
 
-    # validate(
-    #   need(length(input$penguin_island) > 0, "Please select at least one island to visualize data for.")
-    # )
+    validate(
+      need(length(input$penguin_island) > 0, "Please select at least one island to visualize data for.")
+    )
 
     penguins %>%
-      filter(island == input$penguin_island)
+      filter(island %in% input$penguin_island)
 
   })
 
@@ -57,12 +57,11 @@ server <- function(input, output) {
       scale_fill_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
       labs(x = "Flipper length (mm)", y = "Frequency",
            fill = "Penguin species") +
-      theme_minimal() +
-      theme(legend.position = "bottom",
-            legend.background = element_rect(color = "white"))
+      myCustomTheme
+    
   },
   
-  # alt = "A histogram of penguin flipper lengths (mm), with data colored by penguin species. Flipper lengths tend to be smallest on Adélie penguins and largest on Gentoo penguins."
+  alt = "A histogram of penguin flipper lengths (mm), with data colored by penguin species. Flipper lengths tend to be smallest on Adélie penguins and largest on Gentoo penguins."
   
   )
   

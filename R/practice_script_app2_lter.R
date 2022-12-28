@@ -67,7 +67,7 @@ ggplot(trout_filtered_df, aes(x = length_mm, y = weight_g, color = channel_type,
 
 #..................practice filtering for island.................
 island_df <- penguins %>%
-  filter(island == "Dream")
+  filter(island %in% c("Dream", "Torgesen")) 
 
 #........................plot penguin data.......................
 ggplot(na.omit(island_df), aes(x = flipper_length_mm, fill = species)) +

@@ -4,7 +4,8 @@ library(lterdatasampler)
 library(palmerpenguins)
 library(tidyverse)
 library(shinyWidgets)
-# library(shinycssloaders)
+library(markdown)
+library(shinycssloaders)
 
 # DATA WRANGLING ----
 
@@ -29,8 +30,7 @@ clean_trout <- and_vertebrates |>
 
 # GGPLOT THEME ----
 myCustomTheme <- theme_light() +
-  theme(#text = element_text(family = "mono"), 
-    axis.text = element_text(color = "black", size = 12),
+  theme(axis.text = element_text(color = "black", size = 12),
     axis.title = element_text(size = 14, face = "bold"),
     legend.title = element_text(size = 14, face = "bold"),
     legend.text = element_text(size = 13),
