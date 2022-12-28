@@ -3,11 +3,11 @@ ui <- fluidPage(
   # navbar page ----
   navbarPage(
     
-    "LTER Animal Data Explorer",
+    title = "LTER Animal Data Explorer",
     
     # (Page 1) intro tabPanel ----
     tabPanel(title = "About this App",
-            
+             
              # intro text fluidRow ----
              fluidRow(
 
@@ -15,11 +15,11 @@ ui <- fluidPage(
                column(1),
                column(10, includeMarkdown("text/about.md")),
                column(1),
-               
+
              ), # END intro text fluidRow
-             
+
              hr(), # creates light gray horizontal line
-             
+
              # footer text ----
              includeMarkdown("text/footer.md")
     
@@ -42,12 +42,12 @@ ui <- fluidPage(
                      
                      # channel type pickerInput ----
                      pickerInput(inputId = "channel_type_input", label = "Select channel type(s):",
-                                 choices = unique(clean_trout$channel_type), 
+                                 choices = unique(clean_trout$channel_type),
                                  options = pickerOptions(actionsBox = TRUE),
                                  selected = c("cascade", "pool"),
                                  multiple = TRUE), # END channel type pickerInput
-                     
-                     # section checkboxGroupInput ----
+
+                     # # section checkboxGroupInput ----
                      checkboxGroupButtons(inputId = "section_input", label = "Select a sampling section:",
                                           choices = c("clear cut forest", "old growth forest"),
                                           selected = c("clear cut forest", "old growth forest"),
@@ -82,7 +82,7 @@ ui <- fluidPage(
                                  options = pickerOptions(actionsBox = TRUE),
                                  selected = c("Torgersen", "Dream", "Biscoe"),
                                  multiple = T), # END island pickerInput
-                     
+
                      # bin number sliderInput ----
                      sliderInput(inputId = "bin_num", label = "Select number of bins:",
                                  value = 25, max = 100, min = 1), # END bin number sliderInput

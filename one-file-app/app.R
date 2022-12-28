@@ -2,6 +2,7 @@
 library(shiny)
 library(palmerpenguins)
 library(tidyverse)
+library(DT)
 
 # user interface ----
 ui <- fluidPage(

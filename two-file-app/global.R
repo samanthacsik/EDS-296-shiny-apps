@@ -3,8 +3,7 @@ library(shiny)
 library(lterdatasampler)
 library(palmerpenguins)
 library(tidyverse)
-# library(lubridate)
-# library(shinyWidgets)
+library(shinyWidgets)
 # library(shinycssloaders)
 
 # DATA WRANGLING ----
@@ -12,7 +11,7 @@ library(tidyverse)
 # trout data
 clean_trout <- and_vertebrates |>
   filter(species == c("Cutthroat trout")) |>
-  select(sampledate, section, species, length_mm = length_1_mm, weight_g, channel_type = unittype) |> # removed 'year', 'reach'
+  select(sampledate, section, species, length_mm = length_1_mm, weight_g, channel_type = unittype) |> 
   mutate(channel_type = case_when(
     channel_type == "C" ~ "cascade",
     channel_type == "I" ~ "riffle",
@@ -26,17 +25,7 @@ clean_trout <- and_vertebrates |>
     section == "CC" ~ "clear cut forest",
     section == "OG" ~ "old growth forest"
   )) |> 
-  # mutate(year = as_factor(year)) |> 
   drop_na()
-
-# bison data
-# clean_bison <- knz_bison |> 
-#   select(year = rec_year, sex = animal_sex, animal_weight) |> 
-#   mutate(year = as_factor(year)) |> 
-#   mutate(sex = case_when(
-#     sex == "F" ~ "Female",
-#     sex == "M" ~ "Male"
-#   ))
 
 # GGPLOT THEME ----
 myCustomTheme <- theme_light() +

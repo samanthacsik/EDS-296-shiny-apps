@@ -10,4 +10,4 @@ This shiny app was built, in part, to provide users a way of exploring morpholog
 
 #### Where's the data? 
 
-Check out the **Explore the Data** page to find interactive data visualizations looking at Cutthroat trout of the [Andrews Forest LTER](https://lternet.edu/site/andrews-forest-lter/) and Adelie, Gentoo & Chinstrap penguins of the [Palmer Station LTER](https://pallter.marine.rutgers.edu/).
+Check out the **Explore the Data** page to find interactive data visualizations looking at Cutthroat trout of the [Andrews Forest LTER](https://andrewsforest.oregonstate.edu/) and Adelie, Gentoo & Chinstrap penguins of the [Palmer Station LTER](https://pallter.marine.rutgers.edu/).
