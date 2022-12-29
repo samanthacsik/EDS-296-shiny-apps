@@ -33,6 +33,7 @@ unique_lakes <- lake_monitoring_data |>
   select(Site, Latitude, Longitude, Elevation, AvgDepth, AvgTemp) |> 
   distinct()
 
+write_csv(unique_lakes, here::here("shinydashboard/data/lakes_cleaned.csv"))
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                                                                            --
 ##------------------------------- PRACTICE VIZ----------------------------------
