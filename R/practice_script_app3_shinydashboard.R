@@ -14,7 +14,7 @@ lake_monitoring_data <- read_csv(here::here("raw_data/FCWO_lakemonitoringdata_20
 # NOTE: dropping NAs/missing values and calculating average from remaining observations
 # THIS IS NOT GOOD DATA SCIENCE PRACTICE AND IS FOR DEMONTRATION PURPOSES ONLY
 
-# calculate avg depth & temp ----
+# remove missing data, calculate avg depth & temp ----
 avg_depth_temp <- lake_monitoring_data |> 
   select(Site, Depth, BedTemperature) |> 
   filter(Depth != "NaN") |> 
