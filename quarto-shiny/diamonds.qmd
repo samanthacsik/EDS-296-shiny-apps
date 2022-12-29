@@ -1,0 +1,75 @@
+---
+title: "Diamonds Explorer"
+format:
+  html:
+    page-layout: full
+    code-tools: 
+      source: https://github.com/quarto-dev/quarto-web/blob/main/docs/interactive/shiny/_examples/diamonds/shiny-diamonds.qmd 
+server: shiny
+---
+
+```{r}
+#| context: setup
+library(ggplot2)
+library(palmerpenguins)
+```
+
+```{r}
+#| panel: sidebar
+sliderInput(inputId = "body_mass", label = "Select a range of body masses (g)",
+            min = 2700, max = 6300, value = c(3000, 4000))
+```
+
+```{r}
+#| panel: fill
+plotOutput(outputId = "bodyMass_scatterPlot")
+```
+
+```{r}
+#| context: server
+# dataset <- reactive({
+#   diamonds[sample(nrow(diamonds), input$sampleSize),]
+# })
+
+body_mass_df <- reactive({
+  #penguins |>
+  filter(penguins, body_mass_g %in% input$body_mass[1]:input$body_mass[2]) 
+})
+ 
+output$bodyMass_scatterPlot <- renderPlot({
+
+  myplot <- ggplot(na.omit(body_mass_df()),
+         aes(x = flipper_length_mm, y = bill_length_mm,
+             color = species, shape = species)) +
+    geom_point() +
+    scale_color_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
+    scale_shape_manual(values = c("Adelie" = 19, "Chinstrap" = 17, "Gentoo" = 15)) +
+    labs(x = "Flipper length (mm)", y = "Bill length (mm)",
+         color = "Penguin species", shape = "Penguin species") +
+    theme_minimal() +
+    theme(legend.position = c(0.85, 0.2),
+          legend.background = element_rect(color = "white"))
+  
+  print(myplot)
+    
+})
+# output$plot <- renderPlot({
+#   
+#   p <- ggplot(dataset(), aes_string(x=input$x, y=input$y)) + geom_point()
+#   
+#   if (input$color != 'None')
+#     p <- p + aes_string(color=input$color)
+#   
+#   facets <- paste(input$facet_row, '~', input$facet_col)
+#   if (facets != '. ~ .')
+#     p <- p + facet_grid(facets)
+#   
+#   if (input$jitter)
+#     p <- p + geom_jitter()
+#   if (input$smooth)
+#     p <- p + geom_smooth()
+#   
+#   print(p)
+#   
+# })
+```

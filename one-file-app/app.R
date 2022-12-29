@@ -54,8 +54,7 @@ server <- function(input, output) {
       theme(legend.position = c(0.85, 0.2),
             legend.background = element_rect(color = "white"))
     
-  }, alt = "A scatterplot of penguin Bill length (mm) vs. Flipper length (mm) for Adelie (orange circles), Chinstrap (purple triangles), and Gentoo (green squares) penguins."
-  )
+  })
   
   # filter for years ----
   years_df <- reactive({

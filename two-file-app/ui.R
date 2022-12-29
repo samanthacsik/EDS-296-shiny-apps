@@ -3,8 +3,6 @@ ui <- fluidPage(
   # navbar page ----
   navbarPage(
     
-    # theme = bslib::bs_theme(),
-    
     title = "LTER Animal Data Explorer",
     
     # (Page 1) intro tabPanel ----
