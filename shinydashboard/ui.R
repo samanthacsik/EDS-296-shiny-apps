@@ -29,69 +29,117 @@ body <- dashboardBody(
     # welcome tabItem ----
     tabItem(tabName = "welcome",
             
-            # 1st fluidRow ----
-            fluidRow(
+            # left-hand column ----
+            column(width = 6,
               
-              # background info box ----
-              box(width = 6,
-                  
-                  title = "Monitoring Fish Creek Watershed",
-                  
-                  includeMarkdown("text/intro.md")
-                  
-              ), # END background box
+              # box ----
+              box(width = NULL,
+                  title = tagList(icon("water"), strong("Monitoring Fish Creek Watershed")),
+                  includeMarkdown("text/intro.md"),
+                  img(src = "fishCreek_map.jpeg", style = "max-width: 100%;"),
+                  tags$h6(tags$em("Map Source:", tags$a(href = "http://www.fishcreekwatershed.org/", "FCWO")), 
+                          style = "text-align: center;")
+                  ), # END box 
               
-              # photo tabBox ----
-              tabBox(width = 6,
-                     
-                     # NOTE: titles can include an icon
-                     title = tagList(icon("camera"), "FCWO Photos"),
-                     
-                     # Tab 1 ----
-                     tabPanel(title = "Lower Snowman Lake",
-                              
-                              # lower snowman img ----
-                              tags$img(
-                                scr = "shinydashboard/www/lowersnowman.png",
-                                alt = "A helicopter sits on the bank of a partially-frozen lake, Lower Snowman, while three researchers collect samples with various pieces of equipment."
-                              ),# END lowersnowman img
-                              
-                              tags$h6(tags$em("Photo Source:", tags$a(href = "http://www.fishcreekwatershed.org/lowerSnowman-lake.html", "FCWO")))
-                              
-                     ), # END Tab 1
-                     
-                     # Tab 2 ----
-                     tabPanel(title = "Snowman Creek",
-                              
-                              # snowman creek img ----
-                              tags$img(
-                                scr = "www/snowmancreek.png",
-                                alt = "Snow-covered banks alongside Snowman Creek."
-                              ),# END lowersnowman img
-                              
-                              tags$h6(tags$em("Photo Source:", tags$a(href = "http://www.fishcreekwatershed.org/snowman-creek.html", "FCWO")))
-                              
-                              
-                              
-                     ) # END Tab 2
-                     
-              ) # END photo tabBox ----
-              
-            ), # END 1st fluidRow
+            ), # END left-hand column
             
-            # 2nd fluidRow ----
-            fluidRow(
-              
-              # citation box ----
-              box(width = 12,
-                  
-                  includeMarkdown("text/citation.md")
-                  
-              ) # END citation box
-              
-            ), # END 2nd fluidRow
+            # right-hand column ----
+            column(width = 6,
+                   
+                   # first fluidRow ----
+                   fluidRow(
+                     box(width = 12,
+                         title = tagList(icon("table"), strong("Data Source")),
+                         includeMarkdown("text/citation.md")
+                         ) 
+                   ), # END first fluidRow
+                   
+                   # second fluiRow ----
+                   fluidRow(
+                     box(width = 12,
+                         title = tagList(icon("triangle-exclamation"), strong("Disclaimer")),
+                         includeMarkdown("text/disclaimer.md")
+                         )
+                   ) # END second fluidRow
+                   
+            ) # END right-hand column
             
-            includeMarkdown("text/disclaimer.md")
+            # # 1st fluidRow ----
+            # fluidRow(
+            #   
+            #   # background info box ----
+            #   box(width = 6,
+            #       
+            #       title = tagList(icon("water"), "Monitoring Fish Creek Watershed"),# "Monitoring Fish Creek Watershed",
+            #       
+            #       includeMarkdown("text/intro.md"),
+            #       
+            #       img(src = "fishCreek_map.jpeg", 
+            #           style = "max-width: 100%;"),
+            #       
+            #       tags$h6(tags$em("Map Source:", tags$a(href = "http://www.fishcreekwatershed.org/", "FCWO")),
+            #               style = "text-align: center;")
+            #       
+            #   ), # END background box
+            #   
+            #   # photo tabBox ----
+            #   tabBox(width = 6,
+            #          
+            #          # NOTE: titles can include an icon
+            #          # title = tagList(icon("table"), "Title"),
+            #          
+            #          # Tab 1 ----
+            #          tabPanel(title = "Data Source", #"Lower Snowman Lake",
+            #                   
+            #                   includeMarkdown("text/citation.md")
+            #                   
+            #                   # lower snowman img ----
+            #                   # img(
+            #                   #   scr = "lowersnowman.jpeg",
+            #                   #   alt = "A helicopter sits on the bank of a partially-frozen lake, Lower Snowman, while three researchers collect samples with various pieces of equipment."
+            #                   #   ),# END lowersnowman img
+            #                   # 
+            #                   # tags$h6(tags$em("Photo Source:", tags$a(href = "http://www.fishcreekwatershed.org/lowerSnowman-lake.html", "FCWO")))
+            #                   
+            #          ), # END Tab 1
+            #          
+            #          # Tab 2 ----
+            #          tabPanel(title = "Contribute" # "Snowman Creek",
+            #                   
+            #                   #includeMarkdown()
+            #                   # snowman creek img ----
+            #                   # img(
+            #                   #   scr = "snowmancreek.jpeg",
+            #                   #   alt = "Snow-covered banks alongside Snowman Creek."
+            #                   # ),# END lowersnowman img
+            #                   # 
+            #                   # tags$h6(tags$em("Photo Source:", tags$a(href = "http://www.fishcreekwatershed.org/snowman-creek.html", "FCWO")))
+            #                   
+            #          ), # END Tab 2
+            #          
+            #          # Tab 3 ----
+            #          tabPanel(title = "Disclaimer",
+            #                   
+            #                   includeMarkdown("text/disclaimer.md"))
+            #          
+            #   ) # END photo tabBox ----
+            #   
+            # ) # END 1st fluidRow
+            
+            # # 2nd fluidRow ----
+            # fluidRow(
+            #   
+            #   # citation box ----
+            #   box(width = 12,
+            #       
+            #       # includeMarkdown("text/citation.md")
+            #       includeMarkdown("text/disclaimer.md")
+            #       
+            #   ) # END citation box
+            #   
+            # ), # END 2nd fluidRow
+            
+            # includeMarkdown("text/disclaimer.md")
             
     ), # END welcome tabItem 
     
