@@ -23,6 +23,9 @@ sidebar <- dashboardSidebar(
 #..........................dashboardBody.........................
 body <- dashboardBody(
   
+  # set theme ----
+  # fresh::use_theme("shinydashboard_fresh_theme.css"),
+  
   # tabItems ----
   tabItems(
 

@@ -1,0 +1,50 @@
+
+
+// import 3 fonts
+@import url('https://fonts.googleapis.com/css2?family=Karma:wght@500&family=Prompt:wght@300&family=Roboto+Mono:wght@200&display=swap');
+
+// fonts
+$font-family-serif: 'Karma', serif;
+$font-family-sans-serif: 'Prompt', sans-serif;
+$font-family-monospace: 'Roboto Mono', monospace;
+
+// colors
+$green: #8ca376;
+$blue: #525cd1; 
+$pink: #de6eeb;
+$yellow: #f0eaa5;
+$white: #f1f7eb;
+
+// element selectors
+body {
+  background-color: $green; 
+  color: $white; 
+}
+
+h2 {
+  letter-spacing: 5px;
+  font-family: $font-family-serif;
+}
+
+h4 {
+  color: $blue;
+  font-family: $font-family-serif;
+}
+
+p {
+  font-family: $font-family-sans-serif;
+}
+
+a {
+  color: $pink;
+}
+
+// class selectors
+
+.navbar-default {
+  background-color: $yellow;
+}
+
+.btn.default.active {
+  background-color: $green;
+}

@@ -1,6 +1,6 @@
 ui <- fluidPage(
   
-  tags$h1("Demoing UI Functions"),
+  tags$h1("Demoing Functions"),
   
   # tabsetPanel ----
   tabsetPanel(
@@ -9,12 +9,12 @@ ui <- fluidPage(
     tabPanel("Scatterplot",
              
              # species (scatterplot) pickerInput ----
-             # pickerInput(inputId = "penguin_species_scatterplot", label = "Select a species:",
-             #             choices = c("Adelie", "Chinstrap", "Gentoo"),
-             #             options = pickerOptions(actionsBox = TRUE),
-             #             selected = c("Adelie", "Chinstrap", "Gentoo"),
-             #             multiple = T), 
-             penguinSpp_pickerInput(inputId = "penguin_species_scatterplot"),
+             pickerInput(inputId = "penguin_species_scatterplot", label = "Select a species:",
+                         choices = c("Adelie", "Chinstrap", "Gentoo"),
+                         options = pickerOptions(actionsBox = TRUE),
+                         selected = c("Adelie", "Chinstrap", "Gentoo"),
+                         multiple = T),
+             #penguinSpp_pickerInput(inputId = "penguin_species_scatterplot"),
              
              # scatterplot output ----
              plotOutput(outputId = "penguin_scatterplot")
@@ -26,12 +26,12 @@ ui <- fluidPage(
     tabPanel("Histogram",
              
              # species (histogram) pickerInput ----
-             # pickerInput(inputId = "penguin_species_histogram", label = "Select a species:",
-             #             choices = c("Adelie", "Chinstrap", "Gentoo"),
-             #             options = pickerOptions(actionsBox = TRUE),
-             #             selected = c("Adelie", "Chinstrap", "Gentoo"),
-             #             multiple = T), 
-             penguinSpp_pickerInput(inputId = "penguin_species_histogram"),
+             pickerInput(inputId = "penguin_species_histogram", label = "Select a species:",
+                         choices = c("Adelie", "Chinstrap", "Gentoo"),
+                         options = pickerOptions(actionsBox = TRUE),
+                         selected = c("Adelie", "Chinstrap", "Gentoo"),
+                         multiple = T),
+             #penguinSpp_pickerInput(inputId = "penguin_species_histogram"),
              
              # scatterplot output ----
              plotOutput(outputId = "penguin_histogram")

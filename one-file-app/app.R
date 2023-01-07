@@ -3,9 +3,24 @@ library(shiny)
 library(palmerpenguins)
 library(tidyverse)
 library(DT)
+library(bslib)
+
+# # use thematic to match plots theme with app theme ----
+# thematic::thematic_shiny()
 
 # user interface ----
 ui <- fluidPage(
+  
+  # # add pre-built bootswatch theme using {bslib} ----
+  # theme = bslib::bs_theme(bootswatch = "solar"),
+  
+  # # OR create your own theme (OTE: {bslib} themes currently causing shinyWidgets::pickerInput() to break) -----
+  # theme = bslib::bs_theme(
+  #   bg = "#A36F6F", # background color
+  #   fg = "#FDF7F7", # foreground color
+  #   primary = "#483132", # primary accent color
+  #   base_font = font_google("Pacifico")),
+  #   code_font = font_google("JetBrains Mono")),
   
   # app title ----
   tags$h1("My App Title"),
@@ -32,6 +47,8 @@ ui <- fluidPage(
 
 # server instructions ----
 server <- function(input, output) {
+  
+  # bs_themer()
   
   # filter body masses ----
   body_mass_df <- reactive({

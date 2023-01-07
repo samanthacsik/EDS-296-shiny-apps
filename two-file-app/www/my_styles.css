@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
+
+body {
+  background-color: #8ca376; /* bacground color; green */
+  color: #f1f7eb; /* text color; white */
+}
+
+navbar {
+  background-color: #8ca376; /* bacground color; green */
+  color: #8ca376; /* text color; white */
+}
+
+h2 {
+  letter-spacing: 5px;
+}
+
+h4 {
+  color: #0c14f5;
+}
+
+a {
+  color: #f71be5;
+}
+
+
+.btn-default {
+  color: #ffef5e;
+}
