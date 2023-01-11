@@ -1,6 +1,5 @@
 server <- function(input, output) {
   
-  
   # filter penguin species (scatterplot) ----
   filtered_spp_scatterplot <- reactive ({
 
@@ -9,7 +8,6 @@ server <- function(input, output) {
 
   })
 
-  
   # render the scatterplot output ----
   output$penguin_scatterplot <- renderPlot({
     
@@ -28,11 +26,12 @@ server <- function(input, output) {
   
   # filter penguin species (histogram) ----
   filtered_spp_histogram <- reactive ({
-    
+
     penguins |>
       filter(species %in% input$penguin_species_histogram)
-    
+
   })
+  # filtered_spp_histogram <- filterSpp_df(inputId = "penguin_species_histogram")
   
   # render the histogram output ----
   output$penguin_histogram <- renderPlot({
