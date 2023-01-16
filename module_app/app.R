@@ -17,6 +17,7 @@ oceania_data <- filter(gapminder, continent == "Oceania")
 #...............................ui...............................
 ui <- fluidPage(
   
+  # app title ----
   titlePanel("Gapminder"),
   
   # continent tabsetPanel ----
@@ -69,7 +70,6 @@ ui <- fluidPage(
 ) # END fluidPage
 
 #.............................server.............................
-
 server <- function(input, output) {
   
   # ---- collect one year of data ----
