@@ -1,21 +1,19 @@
-
-
-// import 3 fonts
-@import url('https://fonts.googleapis.com/css2?family=Karma:wght@500&family=Prompt:wght@300&family=Roboto+Mono:wght@200&display=swap');
+// import 2 fonts
+@import url('https://fonts.googleapis.com/css2?family=Karma&family=Prompt:wght@200&display=swap');
 
 // fonts
 $font-family-serif: 'Karma', serif;
 $font-family-sans-serif: 'Prompt', sans-serif;
-$font-family-monospace: 'Roboto Mono', monospace;
 
 // colors
 $green: #8ca376;
 $blue: #525cd1; 
-$pink: #de6eeb;
+$orange: #E59C5E;
 $yellow: #f0eaa5;
 $white: #f1f7eb;
 
 // element selectors
+
 body {
   background-color: $green; 
   color: $white; 
@@ -36,7 +34,7 @@ p {
 }
 
 a {
-  color: $pink;
+  color: $orange;
 }
 
 // class selectors

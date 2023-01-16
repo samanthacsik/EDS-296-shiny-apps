@@ -8,7 +8,7 @@ ui <- fluidPage(
     # scatterplot tab ----
     tabPanel("Scatterplot",
              
-             # # species (scatterplot) pickerInput ----
+             # # species (scatterplot) pickerInput (REPLACED BY FXN BELOW) ----
              # pickerInput(inputId = "penguin_species_scatterplot", label = "Select a species:",
              #             choices = c("Adelie", "Chinstrap", "Gentoo"),
              #             options = pickerOptions(actionsBox = TRUE),
@@ -24,7 +24,7 @@ ui <- fluidPage(
     # histogram tab ----
     tabPanel("Histogram",
              
-             # # species (histogram) pickerInput ----
+             # # species (histogram) pickerInput (REPLACED BY FXN BELOW) ----
              # pickerInput(inputId = "penguin_species_histogram", label = "Select a species:",
              #             choices = c("Adelie", "Chinstrap", "Gentoo"),
              #             options = pickerOptions(actionsBox = TRUE),

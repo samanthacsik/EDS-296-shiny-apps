@@ -6,6 +6,13 @@ library(tidyverse)
 library(shinyWidgets)
 library(markdown)
 library(shinycssloaders)
+library(sass)
+
+# COMPILE CSS ----
+sass(
+  input = sass_file("R/my_sass_styles.scss"),
+  output = "www/my_sass_styles.css"
+)
 
 # DATA WRANGLING ----
 
