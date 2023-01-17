@@ -28,14 +28,14 @@ gapModuleServer <- function(id, data) {
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~ SERVER CODE ~~~~~~~~~~~~~~~~~~~~~~~~~~~   
     # creactive df to collect one year of data ----
     ydata <- reactive({
-      filter(data, year == input$year)
+      filter(data, year == input$year) 
     }) # END reactive df
     
     # set slider range ----
     xrange <- range(data$gdpPercap)
     yrange <- range(data$lifeExp)
     
-    # render plot -----
+    # render plot (NOTE: plotting with base R, so this looks a bit different than you may be used to) -----
     output$plot <- renderPlot({
       
       # draw background plot with legend

@@ -1,4 +1,4 @@
-# SOURCE: Garrett Grolemund @ Shiny Developer Conference 2016 (https://github.com/rstudio/ShinyDeveloperConference/blob/master/Modules/Demo/app.R)
+# SOURCE: Garrett Grolemund @ Shiny Developer Conference 2016 (https://github.com/rstudio/ShinyDeveloperConference/blob/master/Modules/Demo/app.R) with updates 
 
 #..............................setup.............................
 library(shiny)
@@ -24,45 +24,51 @@ ui <- fluidPage(
   tabsetPanel(id = "continent", 
               
               # All tab ----
-              tabPanel("All", 
-                       plotOutput("all_plot"),
-                       sliderInput("all_year", "Select Year", value = 1952, min = 1952, 
-                                   max = 2007, step = 5, animate = animationOptions(interval = 500))
+              tabPanel(title = "All", 
+                       plotOutput(outputId = "all_plot"),
+                       sliderInput(inputId = "all_year", label = "Select Year", 
+                                   value = 1952, min = 1952, max = 2007, step = 5, 
+                                   animate = animationOptions(interval = 500))
               ), # END All tab
               
               # Africa tab ----
-              tabPanel("Africa", 
-                       plotOutput("africa_plot"),
-                       sliderInput("africa_year", "Select Year", value = 1952, min = 1952, 
-                                   max = 2007, step = 5, animate = animationOptions(interval = 500))
+              tabPanel(title = "Africa", 
+                       plotOutput(outputId = "africa_plot"),
+                       sliderInput(inputId = "africa_year", label = "Select Year", 
+                                   value = 1952, min = 1952, max = 2007, step = 5, 
+                                   animate = animationOptions(interval = 500))
               ), # END Africa tab 
               
               # Americas tab ----
-              tabPanel("Americas", 
-                       plotOutput("americas_plot"),
-                       sliderInput("americas_year", "Select Year", value = 1952, min = 1952, 
-                                   max = 2007, step = 5, animate = animationOptions(interval = 500))
+              tabPanel(title = "Americas", 
+                       plotOutput(outputId = "americas_plot"),
+                       sliderInput(inputId = "americas_year", label = "Select Year", 
+                                   value = 1952, min = 1952, max = 2007, step = 5, 
+                                   animate = animationOptions(interval = 500))
               ), # END Americas tab
               
               # Asia tab ----
-              tabPanel("Asia", 
-                       plotOutput("asia_plot"),
-                       sliderInput("asia_year", "Select Year", value = 1952, min = 1952, 
-                                   max = 2007, step = 5, animate = animationOptions(interval = 500))
+              tabPanel(title = "Asia", 
+                       plotOutput(outputId = "asia_plot"),
+                       sliderInput(inputId = "asia_year", label = "Select Year", 
+                                   value = 1952, min = 1952, max = 2007, step = 5, 
+                                   animate = animationOptions(interval = 500))
               ), # END Asia tab
               
               # Europe tab ----
-              tabPanel("Europe", 
-                       plotOutput("europe_plot"),
-                       sliderInput("europe_year", "Select Year", value = 1952, min = 1952, 
+              tabPanel(title = "Europe", 
+                       plotOutput(outputId = "europe_plot"),
+                       sliderInput(inputId = "europe_year", label = "Select Year", 
+                                   value = 1952, min = 1952, 
                                    max = 2007, step = 5, animate = animationOptions(interval = 500))
               ), # END Europe
               
               # Oceania tab ----
-              tabPanel("Oceania", 
-                       plotOutput("oceania_plot"),
-                       sliderInput("oceania_year", "Select Year", value = 1952, min = 1952, 
-                                   max = 2007, step = 5, animate = animationOptions(interval = 500))
+              tabPanel(title = "Oceania", 
+                       plotOutput(outputId = "oceania_plot"),
+                       sliderInput(inputId = "oceania_year", label = "Select Year", 
+                                   value = 1952, min = 1952, max = 2007, step = 5, 
+                                   animate = animationOptions(interval = 500))
               ) # END Oceania tab
               
   ) # END continent tabsetPanel
@@ -131,6 +137,7 @@ server <- function(input, output) {
          }
     )
     
+    # build legend
     legend("bottomright", legend = levels(all_data$continent), 
            cex = 1.3, inset = 0.01, text.width = diff(xrange_all)/5,
            fill = c("#E41A1C99", "#377EB899", "#4DAF4A99", "#984EA399", "#FF7F0099")
@@ -162,6 +169,7 @@ server <- function(input, output) {
          }
     )
     
+    # build legend
     legend("bottomright", legend = levels(africa_data$continent), 
            cex = 1.3, inset = 0.01, text.width = diff(xrange_africa)/5,
            fill = c("#E41A1C99", "#377EB899", "#4DAF4A99", "#984EA399", "#FF7F0099")
@@ -193,6 +201,7 @@ server <- function(input, output) {
          }
     )
     
+    # build legend
     legend("bottomright", legend = levels(americas_data$continent), 
            cex = 1.3, inset = 0.01, text.width = diff(xrange_americas)/5,
            fill = c("#E41A1C99", "#377EB899", "#4DAF4A99", "#984EA399", "#FF7F0099")
@@ -224,6 +233,7 @@ server <- function(input, output) {
          }
     )
     
+    # build legend
     legend("bottomright", legend = levels(asia_data$continent), 
            cex = 1.3, inset = 0.01, text.width = diff(xrange_asia)/5,
            fill = c("#E41A1C99", "#377EB899", "#4DAF4A99", "#984EA399", "#FF7F0099")
@@ -255,6 +265,7 @@ server <- function(input, output) {
          }
     )
     
+    # build legend
     legend("bottomright", legend = levels(europe_data$continent), 
            cex = 1.3, inset = 0.01, text.width = diff(xrange_europe)/5,
            fill = c("#E41A1C99", "#377EB899", "#4DAF4A99", "#984EA399", "#FF7F0099")
@@ -286,6 +297,7 @@ server <- function(input, output) {
          }
     )
     
+    # build legend
     legend("bottomright", legend = levels(oceania_data$continent), 
            cex = 1.3, inset = 0.01, text.width = diff(xrange_oceania)/5,
            fill = c("#E41A1C99", "#377EB899", "#4DAF4A99", "#984EA399", "#FF7F0099")
