@@ -1,4 +1,4 @@
-## Function app for debugging practice
+## Functioning app for debugging practice
 
 This is the correctly-function app that's meant to complement the [`reactlog-broken` app](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/reactlog-broken), which is saved to this same repo. Instruction begins on [this slide](https://ucsb-meds.github.io/EDS430-Shiny/#/debugging).
 
