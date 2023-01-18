@@ -17,7 +17,7 @@ The shiny applications in this repository are meant to accompany the [EDS 430 - 
 ├── raw_data/                                         # raw data files
 |    └── FCWO_lakemonitoringdata_2011_2022_daily.csv    # raw data used by /shinydashboard
 |
-├── one-file-app/                                     # folder containing the code for App #1, a single-file-app (instructions begin on slide ?)
+├── single-file-app/                                  # folder containing the code for App #1, a single-file-app 
 |   └── app.R                                           # app code
 |    
 ├── two-file-app/                                     # folder containing the code for App #2, a two-file-app deployed on shinyapps.io (instructions begin on slide ?)
@@ -29,7 +29,7 @@ The shiny applications in this repository are meant to accompany the [EDS 430 - 
 |     └── about.md                                      # landing page background info text      
 |     └── footer.md                                     # landing page footer text
 |
-|── shinydashboard/                                   # folder containing the code for App #3, a shinydashboard (instructions begin on slide ?)
+|── shinydashboard/                                   # folder containing the code for App #3, a shinydashboard 
 |   └── global.R                                        # packages, objects, etc. used by ui & server
 |   └── ui.R                                            # user interface code
 |   └── server.R                                        # server code
@@ -42,6 +42,46 @@ The shiny applications in this repository are meant to accompany the [EDS 430 - 
 |     └── disclaimer.md                                 # welcome page disclaimer text
 |   └── www/                                          # special directory in shiny for images, stylesheets, etc. 
 |      └── FishCreekWatershedSiteMap_2020.jpeg          # map for welcome page, downloaded from http://www.fishcreekwatershed.org/images/FishCreekWatershedSiteMap_2020.jpg 
+|
+├── reactlog-working/                                  # folder containing the code for a functioning app (referenced in debugging section) 
+|   └── app.R                                           # app code
+|   └── www/                                            # special directory in shiny for images, stylesheets, etc. 
+|     └── adelie.gif
+|     └── all_penguins.jpeg   
+|     └── chinstrap.jpeg  
+|     └── gentoo.jpeg  
+|
+├── reactlog-broken/                                  # folder containing the code for a broken app (referenced in debugging section) 
+|   └── app.R                                           # app code
+|   └── www/                                            # special directory in shiny for images, stylesheets, etc. 
+|     └── adelie.gif
+|     └── all_penguins.jpeg   
+|     └── chinstrap.jpeg  
+|     └── gentoo.jpeg  
+|
+├── testing-app/                                  # folder containing the code for an app to demo writing tests using {shinytest2}
+|   └── app.R                                           # app code
+|   └── tests/                                          # folder containint {shinytest2} test files
+|      └── testthat.R                                     # test runner        
+|      └── testthat/                                      # folder containing tests
+|         └── setup-shinytest2.R                            # app support file information (automatically generated, even if no support files exist)
+|         └── test-shinytest2.R                             # {shinytest2} test
+|         └── snaps/                                        # folder containing
+|            └── sam-test-001.json                          # JSON representation of the state of app when app$expect_values() was called
+|            └── sam-test-001_.png                          # screenshot of app when app$expect_values() was called
+|
+├── functions-app/                                # folder containing app used during function-writing practice
+|    └── global.R                                       # packages, objects, etc. used by ui & server
+|    └── ui.R                                           # user interface code
+|    └── server.R                                       # server code
+|    └── R/                                             # contains function scripts
+|      └── penguinSpp_pickerInput.R                        # penguinSpp_pickerInput() function
+|
+├── module-app/                                   # folder containing apps to demo shiny modules
+|     └── app.R                                      # non-modularized app
+|     └── modularized/                               # folder containing modularized app                           
+|       └── app.R                                    # modularized app
+|       └── gapModule.R                              # module code
 |
 ├── README.md
 ├── .gitignore        
