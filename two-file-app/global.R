@@ -18,7 +18,7 @@ sass(
 
 # trout data
 clean_trout <- and_vertebrates |>
-  filter(species == c("Cutthroat trout")) |>
+  filter(species == "Cutthroat trout") |>
   select(sampledate, section, species, length_mm = length_1_mm, weight_g, channel_type = unittype) |> 
   mutate(channel_type = case_when(
     channel_type == "C" ~ "cascade",

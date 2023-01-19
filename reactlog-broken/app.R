@@ -49,18 +49,20 @@ server <- function(input, output){
   # render penguin text ----
   output$penguins_text <- renderText({
     
-    message("Displaying text...")
-    
     if(input$img == "All penguins"){
+      message("Printing all penguins text")
       "Meet all of our lovely penguins species!"
     }
     else if(input$img == "Sassy chinstrap"){
+      message("Printing chinstrap text")
       "Chinstraps get their name from the thin black line that runs under their chins"
     }
     else if(input$img == "Staring gentoo"){
+      message("Printing gentoo text")
       "Gentoos stand out because of their bright orange bills and feet"
     }
     else if(input$img == "Adorable adelie"){
+      message("Printing adelie text")
       "Adelie penguins are my personal favorite <3"
     }
   }) # END renderText
@@ -69,18 +71,20 @@ server <- function(input, output){
   # render penguin images ----
   output$penguin_img <- renderImage({
     
-    message("Displaying image...")
-    
     if(input$img == "All penguins"){
+      message("Displaying all penguins image")
       list(src = "www/all_penguins.jpeg", height = 240, width = 300)
     }
     else if(input$img == "Sassy chinstrap"){
+      message("Displaying chinstrap image")
       list(src = "www/chinstrap.jpeg", height = 240, width = 300)
     }
     else if(input$img == "Staring gentoo"){
+      message("Displaying all gentoo image")
       list(src = "www/gentoo.jpeg", height = 240, width = 300)
     }
     else if(input$img == "Adorable adelie"){
+      message("Displaying all adelie image")
       list(src = "www/adelie.gif", height = 240, width = 300)
     }
     

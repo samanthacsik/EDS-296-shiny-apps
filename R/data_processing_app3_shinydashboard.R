@@ -29,4 +29,4 @@ unique_lakes <- lake_monitoring_data |>
   mutate(Site = as_factor(Site))
 
 # save processed data to your app's data directory ----
-write_csv(unique_lakes, here::here("shinydashboard/data/lake_data_processed.rds"))
+write_csv(unique_lakes, here::here("shinydashboard/data/lake_data_processed2.csv"))
