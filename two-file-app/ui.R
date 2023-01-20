@@ -49,10 +49,10 @@ ui <- navbarPage(
              # trout tabPanel ----
              tabPanel(title = "Trout",
                       
-                      # trout plot sidebarLayout ----
+                      # trout sidebarLayout ----
                       sidebarLayout(
                         
-                        # trout plot sidebarPanel ----
+                        # trout sidebarPanel ----
                         sidebarPanel(
                           
                           # channel type pickerInput ----
@@ -61,24 +61,24 @@ ui <- navbarPage(
                                       options = pickerOptions(actionsBox = TRUE),
                                       selected = c("cascade", "pool"),
                                       multiple = TRUE), # END channel type pickerInput
-                          
+                         ž
                           # # section checkboxGroupInput ----
-                          checkboxGroupButtons(inputId = "section_input", label = "Select a sampling section:",
+                          checkboxGroupButtons(inputId = "section_input", label = "Select a sampling section(s):",
                                                choices = c("clear cut forest", "old growth forest"),
                                                selected = c("clear cut forest", "old growth forest"),
                                                individual = FALSE, justified = TRUE, size = "sm",
                                                checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon"))), # END section checkboxGroupInput
                           
-                        ), # END trout plot sidebarPanel
+                        ), # END trout sidebarPanel
                         
-                        # trout plot mainPanel ----
+                        # trout mainPanel ----
                         mainPanel(
                           
                           plotOutput(outputId = "trout_scatterplot") |> withSpinner(color = "#006792", type = 1)
                           
-                        ) # END trout plot mainPanel
+                        ) # END trout mainPanel
                         
-                      ) # END trout plot sidebarLayout
+                      ) # END trout sidebarLayout
                       
              ), # END trout tabPanel 
              
@@ -92,14 +92,14 @@ ui <- navbarPage(
                         sidebarPanel(
                           
                           # island pickerInput ----
-                          pickerInput(inputId = "penguin_island", label = "Select an island:",
+                          pickerInput(inputId = "penguin_island_input", label = "Select an island(s):",
                                       choices = c("Torgersen", "Dream", "Biscoe"),
                                       options = pickerOptions(actionsBox = TRUE),
                                       selected = c("Torgersen", "Dream", "Biscoe"),
                                       multiple = T), # END island pickerInput
                           
                           # bin number sliderInput ----
-                          sliderInput(inputId = "bin_num", label = "Select number of bins:",
+                          sliderInput(inputId = "bin_num_input", label = "Select number of bins:",
                                       value = 25, max = 100, min = 1), # END bin number sliderInput
                           
                         ), # END penguin plot sidebarPanel
