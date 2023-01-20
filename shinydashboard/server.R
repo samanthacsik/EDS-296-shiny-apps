@@ -18,14 +18,13 @@ server <- function(input, output) {
     leaflet() |>
       
       # add tiles
-      addProviderTiles("Esri.WorldImagery",
-                       options = providerTileOptions(maxNativeZoom = 19, maxZoom = 100)) |>
-      
-      # add mini map
-      addMiniMap(toggleDisplay = TRUE, minimized = TRUE) |>
+      addProviderTiles("Esri.WorldImagery") |>
       
       # set view over AK
       setView(lng = -152.048442, lat = 70.249234, zoom = 6) |>
+      
+      # add mini map
+      addMiniMap(toggleDisplay = TRUE, minimized = TRUE) |>
       
       # add markers
       addMarkers(data =  filtered_lakes(),

@@ -5,9 +5,7 @@ library(tidyverse)
 library(leaflet)
 
 # read in data
-unique_lakes <- read_csv(here::here("shinydashboard/data/lake_data_processed.csv"))
-# unique_lakes <- readRDS(here::here("shinydashboard", "data", "lake_data_processed.rds"))
-# unique_lakes <- readRDS("shinydashboard/data/lake_data_processed.rds")
+unique_lakes <- read_csv("shinydashboard/data/lake_data_processed.csv")
 
 #.......................PRACTICE FILTERING.......................
 
@@ -22,8 +20,7 @@ filtered_lakes <- unique_lakes |>
 leaflet() |> 
   
   # add tiles
-  addProviderTiles("Esri.WorldImagery", 
-                   options = providerTileOptions(maxNativeZoom = 19, maxZoom = 100)) |> 
+  addProviderTiles("Esri.WorldImagery") |> 
   
   # add mini map
   addMiniMap(toggleDisplay = TRUE, minimized = TRUE) |> 
