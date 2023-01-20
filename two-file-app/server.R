@@ -4,10 +4,7 @@ server <- function(input, output) {
   trout_filtered_df <- reactive({
 
     validate(
-      need(length(input$channel_type_input) > 0, "Please select at least one channel type to visualize data for.")
-    )
-
-    validate(
+      need(length(input$channel_type_input) > 0, "Please select at least one channel type to visualize data for."),
       need(length(input$section_input) > 0, "Please select at least one section (clear cut forest or old growth forest) to visualize data for.")
     )
 

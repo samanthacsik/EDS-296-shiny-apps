@@ -61,7 +61,7 @@ ui <- navbarPage(
                                       options = pickerOptions(actionsBox = TRUE),
                                       selected = c("cascade", "pool"),
                                       multiple = TRUE), # END channel type pickerInput
-                         ž
+                         
                           # # section checkboxGroupInput ----
                           checkboxGroupButtons(inputId = "section_input", label = "Select a sampling section(s):",
                                                choices = c("clear cut forest", "old growth forest"),
