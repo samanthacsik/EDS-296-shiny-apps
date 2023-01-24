@@ -7,16 +7,16 @@ library(tidyverse)
 library(DT)
 library(bslib)
 
-# # use thematic to match plots theme with app theme ----
+# ---- use thematic to match plots theme with app theme (comment/uncomment line below to see how {thematic} changes appearance of ggplot) ----
 # thematic::thematic_shiny()
 
 # user interface ----
 ui <- fluidPage(
   
-  # # add pre-built bootswatch theme using {bslib} ----
+  # ---- add pre-built bootswatch theme using {bslib} ----
   # theme = bslib::bs_theme(bootswatch = "solar"),
   
-  # # OR create your own theme (OTE: {bslib} themes currently causing shinyWidgets::pickerInput() to break) -----
+  # ---- OR create your own theme using {bslib} ----
   # theme = bslib::bs_theme(
   #   bg = "#A36F6F", # background color
   #   fg = "#FDF7F7", # foreground color

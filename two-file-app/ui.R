@@ -1,12 +1,9 @@
 # navbar page ----
 ui <- navbarPage(
   
-  # add css file ----
-  # header = tags$head(
-  #   tags$link(rel = "stylesheet", type = "text/css", href = "my_sass_styles.css")
-  # ),
-  # 
-  # # add theme using {bslib} -- but breaks our shinyWidgets::pickerIput ----
+  ### add themes/styling by uncommenting sections below (try out bslib theme, or fresh theme, or css styling) ###
+  
+  # ---- add theme using {bslib} -- but breaks our shinyWidgets::pickerIput ----
   # theme = bslib::bs_theme(bootswatch = "minty"),
   # theme = bslib::bs_theme(
   #   bg = "#101010", # background color
@@ -15,8 +12,13 @@ ui <- navbarPage(
   #   base_font = font_google("Prompt"),
   #   code_font = font_google("JetBrains Mono")),
   
-  # # OR add theme created using {fresh} 
+  # ---- OR add theme created using {fresh} ----
   # theme = "shiny_fresh_theme.css",
+  
+  # ---- OR add css file ----
+  # header = tags$head(
+  #   tags$link(rel = "stylesheet", type = "text/css", href = "my_sass_styles.css")
+  # ),
   
   title = "LTER Animal Data Explorer",
   
