@@ -38,11 +38,11 @@ server <- function(input, output) {
   island_df <- reactive({
 
     validate(
-      need(length(input$penguin_island) > 0, "Please select at least one island to visualize data for.")
+      need(length(input$penguin_island_input) > 0, "Please select at least one island to visualize data for.")
     )
 
     penguins %>%
-      filter(island %in% input$penguin_island)
+      filter(island %in% input$penguin_island_input)
 
   })
 

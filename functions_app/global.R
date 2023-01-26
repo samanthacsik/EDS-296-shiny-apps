@@ -4,6 +4,7 @@ library(shinyWidgets)
 library(palmerpenguins)
 library(tidyverse)
 
-# IMPORT FUNCTIONS ----
-source("R/penguinSpp_pickerInput.R") # NOTE: with Shiny version 1.5.0, you don't need to source files that are stored in ~/app-dir/R (they are loaded automatically)
-#source("R/filterSpp_df.R")
+# IMPORT FUNCTIONS (NOTE: with Shiny v1.5.0 you DON'T need to source files that are stored in ~app-dir/R (they are loaded automatically)----
+# source("R/penguinSpp_pickerInput.R") 
+# source("R/penguin_scatterplot.R")
+# source("R/penguin_histogram.R")

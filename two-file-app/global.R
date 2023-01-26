@@ -10,7 +10,7 @@ library(sass)
 
 # COMPILE CSS ----
 sass(
-  input = sass_file("R/my_sass_styles.scss"),
+  input = sass_file("www/my_sass_styles.scss"),
   output = "www/my_sass_styles.css"
 )
 

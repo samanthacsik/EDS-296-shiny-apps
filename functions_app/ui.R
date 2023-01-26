@@ -8,12 +8,7 @@ ui <- fluidPage(
     # scatterplot tab ----
     tabPanel("Scatterplot",
              
-             # # species (scatterplot) pickerInput (REPLACED BY FXN BELOW) ----
-             # pickerInput(inputId = "penguin_species_scatterplot", label = "Select a species:",
-             #             choices = c("Adelie", "Chinstrap", "Gentoo"),
-             #             options = pickerOptions(actionsBox = TRUE),
-             #             selected = c("Adelie", "Chinstrap", "Gentoo"),
-             #             multiple = T),
+             # species (scatterplot) pickerInput ----
              penguinSpp_pickerInput(inputId = "penguin_species_scatterplot"),
              
              # scatterplot output ----
@@ -24,12 +19,7 @@ ui <- fluidPage(
     # histogram tab ----
     tabPanel("Histogram",
              
-             # # species (histogram) pickerInput (REPLACED BY FXN BELOW) ----
-             # pickerInput(inputId = "penguin_species_histogram", label = "Select a species:",
-             #             choices = c("Adelie", "Chinstrap", "Gentoo"),
-             #             options = pickerOptions(actionsBox = TRUE),
-             #             selected = c("Adelie", "Chinstrap", "Gentoo"),
-             #             multiple = T),
+             # species (histogram) pickerInput ----
              penguinSpp_pickerInput(inputId = "penguin_species_histogram"),
              
              # scatterplot output ----
