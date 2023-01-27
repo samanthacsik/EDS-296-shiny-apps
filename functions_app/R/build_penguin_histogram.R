@@ -4,7 +4,7 @@ build_penguin_histogram <- function(input) {
   filtered_spp_histogram <- reactive ({
     
     penguins |>
-      filter(species %in% input$penguin_species_histogram)
+      filter(species %in% input$penguin_species_histogram_input)
     
   })
   

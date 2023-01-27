@@ -9,7 +9,7 @@ ui <- fluidPage(
     tabPanel("Scatterplot",
              
              # species (scatterplot) pickerInput ----
-             penguinSpp_pickerInput(inputId = "penguin_species_scatterplot"),
+             penguinSpp_pickerInput(inputId = "penguin_species_scatterplot_input"),
              
              # scatterplot output ----
              plotOutput(outputId = "penguin_scatterplot")
@@ -20,7 +20,7 @@ ui <- fluidPage(
     tabPanel("Histogram",
              
              # species (histogram) pickerInput ----
-             penguinSpp_pickerInput(inputId = "penguin_species_histogram"),
+             penguinSpp_pickerInput(inputId = "penguin_species_histogram_input"),
              
              # scatterplot output ----
              plotOutput(outputId = "penguin_histogram")

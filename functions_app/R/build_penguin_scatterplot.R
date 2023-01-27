@@ -4,7 +4,7 @@ build_penguin_scatterplot <- function(input) {
   filtered_spp_scatterplot <- reactive ({
     
     penguins |>
-      filter(species %in% input$penguin_species_scatterplot)
+      filter(species %in% input$penguin_species_scatterplot_input)
     
   })
   
