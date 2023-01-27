@@ -81,7 +81,9 @@ The shiny applications in this repository are meant to accompany the [EDS 430 - 
     |    └── ui.R                                           # user interface code
     |    └── server.R                                       # server code
     |    └── R/                                             # contains function scripts
-    |      └── penguinSpp_pickerInput.R                        # penguinSpp_pickerInput() function
+    |      └── penguinSpp_pickerInput.R                        # penguinSpp_pickerInput() UI function
+    |      └── build_penguin_scatterplot.R                     # build_penguin_scatterplot() server function
+    |      └── build_penguin_histogram.R                       # build_penguin_histogram() server function
     |
     ├── module-app/                                   # folder containing apps to demo shiny modules
     |     └── app.R                                      # non-modularized app
