@@ -2,7 +2,7 @@
 
 ## What's in this repo?
 
-The shiny applications in this repository are meant to accompany the [EDS 430 - Intro to Shiny slide deck](https://ucsb-meds.github.io/EDS430-Shiny/#/title-slide) created for the Bren School's Master of Environmental Science (MEDS) program.
+The shiny applications in this repository are meant to accompany the [EDS 430 - Intro to Shiny course website](https://ucsb-meds.github.io/EDS-430-Intro-to-Shiny/) created for the Bren School's Master of Environmental Science (MEDS) program.
 
 ## Repository structure:
 
