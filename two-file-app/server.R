@@ -15,7 +15,7 @@ server <- function(input, output) {
     })
 
   # trout scatterplot ----
-  output$trout_scatterplot <- renderPlot({
+  output$trout_scatterplot_output <- renderPlot({
 
     ggplot(trout_filtered_df(), aes(x = length_mm, y = weight_g, color = channel_type, shape = channel_type)) +
       geom_point(alpha = 0.7, size = 5) +
@@ -47,10 +47,10 @@ server <- function(input, output) {
   })
 
   # render the flipper length histogram ----
-  output$flipperLength_histogram <- renderPlot({
+  output$flipperLength_histogram_output <- renderPlot({
 
     ggplot(na.omit(island_df()), aes(x = flipper_length_mm, fill = species)) +
-      geom_histogram(alpha = 0.6, bins = input$bin_num) +
+      geom_histogram(alpha = 0.6, position = "identity", bins = input$bin_num_input) +
       scale_fill_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
       labs(x = "Flipper length (mm)", y = "Frequency",
            fill = "Penguin species") +
