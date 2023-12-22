@@ -1,17 +1,17 @@
 build_penguin_scatterplot <- function(input) {
   
   # filter penguin species ----
-  filtered_spp_scatterplot <- reactive ({
+  filtered_spp_scatterplot_df <- reactive ({
     
     penguins |>
-      filter(species %in% input$penguin_species_scatterplot_input)
+      filter(species %in% input$penguinSpp_scatterplot_input)
     
   })
   
   # render scatterplot ----
   renderPlot({
     
-    ggplot(na.omit(filtered_spp_scatterplot()),
+    ggplot(na.omit(filtered_spp_scatterplot_df()),
            aes(x = bill_length_mm, y = bill_depth_mm,
                color = species, shape = species)) +
       geom_point() +

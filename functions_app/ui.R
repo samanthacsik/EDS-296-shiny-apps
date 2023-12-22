@@ -6,24 +6,24 @@ ui <- fluidPage(
   tabsetPanel(
     
     # scatterplot tab ----
-    tabPanel("Scatterplot",
+    tabPanel(title = "Scatterplot",
              
              # species (scatterplot) pickerInput ----
-             penguinSpp_pickerInput(inputId = "penguin_species_scatterplot_input"),
+             penguinSpp_pickerInput(inputId = "penguinSpp_scatterplot_input"),
              
              # scatterplot output ----
-             plotOutput(outputId = "penguin_scatterplot")
+             plotOutput(outputId = "penguin_scatterplot_output")
              
     ), # END scatterplot tab
     
     # histogram tab ----
-    tabPanel("Histogram",
+    tabPanel(title = "Histogram",
              
              # species (histogram) pickerInput ----
-             penguinSpp_pickerInput(inputId = "penguin_species_histogram_input"),
+             penguinSpp_pickerInput(inputId = "penguinSpp_histogram_input"),
              
              # scatterplot output ----
-             plotOutput(outputId = "penguin_histogram")
+             plotOutput(outputId = "penguin_histogram_output")
              
     ) # END histogram tab
     
