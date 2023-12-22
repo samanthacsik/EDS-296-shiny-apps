@@ -21,6 +21,6 @@ create_theme(
   ),
   
   # generate css file
-  output_file = "shinydashboard/www/shinydashboard_fresh_theme.css"
+  output_file = "shinydashboard/www/shinydashboard-fresh-theme.css"
   
 )

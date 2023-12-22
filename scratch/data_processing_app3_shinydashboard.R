@@ -1,12 +1,19 @@
+#...............................................................................
+#                                                                              .
+#  For simplicity, I've removed all rows with missing values (i.e. `NaN`s      .
+#  in the `Depth` column & `NA`s in the `BedTemperature` column) before        .
+#  calculating averages. However, exploring and  thinking critically about     .
+#  missing data is an important part of data analysis, and in a real-life      .
+#  scenario, you should consider the most appropriate method for handling them .
+#                                                                              .
+#...............................................................................
+
 # load packages ----
 library(tidyverse)
 library(leaflet)
 
 # read in data ----
 lake_monitoring_data <- read_csv(here::here("raw_data/FCWO_lakemonitoringdata_2011_2022_daily.csv"))
-
-# NOTE: dropping NAs/missing values and calculating average from remaining observations
-# THIS IS NOT GOOD DATA SCIENCE PRACTICE AND IS FOR DEMONTRATION PURPOSES ONLY
 
 # remove missing data, calculate avg depth & temp ----
 avg_depth_temp <- lake_monitoring_data |> 

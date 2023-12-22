@@ -13,7 +13,7 @@ server <- function(input, output) {
   
   
   # build leaflet map ----
-  output$lake_map <- renderLeaflet({
+  output$lake_map_output <- renderLeaflet({
     
     leaflet() |>
       

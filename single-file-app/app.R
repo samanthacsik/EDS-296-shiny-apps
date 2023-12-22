@@ -21,9 +21,9 @@ ui <- fluidPage(
   #   bg = "#A36F6F", # background color
   #   fg = "#FDF7F7", # foreground color
   #   primary = "#483132", # primary accent color
-  #   base_font = font_google("Pacifico")),
+  #   base_font = font_google("Pacifico"),
   #   code_font = font_google("JetBrains Mono")),
-  
+
   # app title ----
   tags$h1("My App Title"),
   
@@ -45,7 +45,7 @@ ui <- fluidPage(
   # DT output ----
   DT::dataTableOutput(outputId = "penguin_DT_output")
   
-)
+) # END fluidPage
 
 # server instructions ----
 server <- function(input, output) {

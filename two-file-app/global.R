@@ -10,8 +10,8 @@ library(sass)
 
 # COMPILE CSS ----
 sass(
-  input = sass_file("www/my_sass_styles.scss"),
-  output = "www/my_sass_styles.css"
+  input = sass_file("www/sass-styles.scss"),
+  output = "www/sass-styles.css"
 )
 
 # DATA WRANGLING ----

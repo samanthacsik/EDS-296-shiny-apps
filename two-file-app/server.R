@@ -30,7 +30,7 @@ server <- function(input, output) {
 
   },
   
-  alt = "A scatterplot of the relationship between cutthroat trout lengths (mm) (x-axis) and weights (g) (y-axis), with data points colored and shaped based on the water channel type from which they were collected. Trout tend to be longer, but weight less in waterways within the old growth forest. Trout tend to be shorter, but weight more in waterways within the clear cut forest."
+  alt = "A scatterplot of the relationship between cutthroat trout lengths (mm) and weights (g), with data points colored and shaped based on the water channel type from which they were collected. Trout tend to be longer, but weight less in waterways within the old growth forest. Trout tend to be shorter, but weight more in waterways within the clear cut forest."
   
   )
   

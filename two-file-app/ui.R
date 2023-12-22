@@ -1,6 +1,14 @@
 # navbar page ----
 ui <- navbarPage(
   
+  # # apply {fresh} theme ----
+  # theme = "shiny_fresh_theme.css",
+  
+  # # add css file ----
+  # header = tags$head(
+  #   tags$link(rel = "stylesheet", type = "text/css", href = "sass-styles.css")
+  # ),
+  
   title = "LTER Animal Data Explorer",
 
   # (Page 1) intro tabPanel ----

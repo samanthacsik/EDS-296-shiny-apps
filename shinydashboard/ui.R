@@ -23,8 +23,8 @@ sidebar <- dashboardSidebar(
 #..........................dashboardBody.........................
 body <- dashboardBody(
   
-  # ---- set theme using {fresh} ----
-  # fresh::use_theme("shinydashboard_fresh_theme.css"),
+  # # ---- set theme using {fresh} ----
+  # fresh::use_theme("shinydashboard-fresh-theme.css"),
   
   # tabItems ----
   tabItems(
@@ -115,7 +115,8 @@ body <- dashboardBody(
                   title = tags$strong("Monitored lakes within Fish Creek Watershed:"),
 
                   # leaflet output ----
-                  leafletOutput(outputId = "lake_map") |> withSpinner(type = 1, color = "#4287f5")
+                  leafletOutput(outputId = "lake_map_output") |> 
+                    withSpinner(type = 1, color = "#4287f5")
 
               ) # END leaflet box
 
