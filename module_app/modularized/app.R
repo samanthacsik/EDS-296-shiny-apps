@@ -2,7 +2,6 @@
 library(shiny)
 library(gapminder) # contains `gapminder` dataset that we'll be using in our app
 library(dplyr) # for data wrangling
-source("gapModule.R") # if using global.R, source modules there instead
 
 # Note: This code creates data sets to use in each tab.
 # It removes Kuwait since Kuwait distorts the gdp scale
