@@ -20,7 +20,7 @@ ui <- navbarPage(
            # use columns to create white space on sides
            column(1),
            column(10, includeMarkdown("text/about.md")),
-           column(1),
+           column(1)
 
          ), # END intro text fluidRow
 
@@ -49,8 +49,8 @@ ui <- navbarPage(
                           # channel type pickerInput ----
                           pickerInput(inputId = "channel_type_input", label = "Select channel type(s):",
                                       choices = unique(clean_trout$channel_type),
-                                      options = pickerOptions(actionsBox = TRUE),
                                       selected = c("cascade", "pool"),
+                                      options = pickerOptions(actionsBox = TRUE),
                                       multiple = TRUE), # END channel type pickerInput
 
                           # section checkboxGroupInput ----
@@ -65,7 +65,8 @@ ui <- navbarPage(
                         # trout mainPanel ----
                         mainPanel(
 
-                          plotOutput(outputId = "trout_scatterplot_output") |> withSpinner(color = "#006792", type = 1)
+                          plotOutput(outputId = "trout_scatterplot_output") |> 
+                            withSpinner(color = "#006792", type = 1)
 
                         ) # END trout mainPanel
 
@@ -85,9 +86,9 @@ ui <- navbarPage(
                           # island pickerInput ----
                           pickerInput(inputId = "penguin_island_input", label = "Select an island(s):",
                                       choices = c("Torgersen", "Dream", "Biscoe"),
-                                      options = pickerOptions(actionsBox = TRUE),
                                       selected = c("Torgersen", "Dream", "Biscoe"),
-                                      multiple = T), # END island pickerInput
+                                      options = pickerOptions(actionsBox = TRUE),
+                                      multiple = TRUE), # END island pickerInput
 
                           # bin number sliderInput ----
                           sliderInput(inputId = "bin_num_input", label = "Select number of bins:",
@@ -98,7 +99,8 @@ ui <- navbarPage(
                         # penguin plot mainPanel ----
                         mainPanel(
 
-                          plotOutput(outputId = "flipperLength_histogram_output") |> withSpinner(color = "#4BA4A4", type = 4, size = 2)
+                          plotOutput(outputId = "flipperLength_histogram_output") |> 
+                            withSpinner(color = "#4BA4A4", type = 4, size = 2)
 
                         ) # END penguin plot mainPanel
 

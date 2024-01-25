@@ -26,11 +26,11 @@ server <- function(input, output) {
                                     "pool" = 18, "rapid" = 8, "step (small falls)" = 23,
                                     "side channel" = 25)) +
       labs(x = "Trout Length (mm)", y = "Trout Weight (g)", color = "Channel Type", shape = "Channel Type") +
-      myCustomTheme
+      myCustomTheme()
 
   },
   
-  alt = "A scatterplot of the relationship between cutthroat trout lengths (mm) and weights (g), with data points colored and shaped based on the water channel type from which they were collected. Trout tend to be longer, but weight less in waterways within the old growth forest. Trout tend to be shorter, but weight more in waterways within the clear cut forest."
+  alt = "A scatterplot of the relationship between cutthroat trout lengths (mm) and weights (g). Trout tend to be longer, but weight less in waterways within the old growth forest. Trout tend to be shorter, but weight more in waterways within the clear cut forest."
   
   )
   
@@ -51,14 +51,14 @@ server <- function(input, output) {
 
     ggplot(na.omit(island_df()), aes(x = flipper_length_mm, fill = species)) +
       geom_histogram(alpha = 0.6, position = "identity", bins = input$bin_num_input) +
-      scale_fill_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
+      scale_fill_manual(values = c("Adelie" = "darkorange", "Chinstrap" = "purple", "Gentoo" = "cyan4")) +
       labs(x = "Flipper length (mm)", y = "Frequency",
            fill = "Penguin species") +
-      myCustomTheme
+      myCustomTheme()
     
   },
   
-  alt = "A histogram of penguin flipper lengths (mm), with data colored by penguin species. Flipper lengths tend to be smallest on Adélie penguins and largest on Gentoo penguins."
+  alt = "A histogram of penguin flipper lengths (mm). Flipper lengths tend to be smallest on Adélie penguins and largest on Gentoo penguins."
   
   )
   

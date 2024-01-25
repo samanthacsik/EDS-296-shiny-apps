@@ -14,9 +14,18 @@ sass(
   output = "www/sass-styles.css"
 )
 
-# DATA WRANGLING ----
+# GGPLOT THEME ----
+myCustomTheme <- function() {
+  theme_light() +
+    theme(axis.text = element_text(size = 12),
+          axis.title = element_text(size = 14, face = "bold"),
+          legend.title = element_text(size = 14, face = "bold"),
+          legend.text = element_text(size = 13),
+          legend.position = "bottom",
+          panel.border = element_rect(linewidth = 0.7))
+}
 
-# trout data
+# DATA WRANGLING ----
 clean_trout <- and_vertebrates |>
   filter(species == "Cutthroat trout") |>
   select(sampledate, section, species, length_mm = length_1_mm, weight_g, channel_type = unittype) |> 
@@ -35,11 +44,3 @@ clean_trout <- and_vertebrates |>
   )) |> 
   drop_na()
 
-# GGPLOT THEME ----
-myCustomTheme <- theme_light() +
-  theme(axis.text = element_text(size = 12),
-    axis.title = element_text(size = 14, face = "bold"),
-    legend.title = element_text(size = 14, face = "bold"),
-    legend.text = element_text(size = 13),
-    legend.position = "bottom",
-    panel.border = element_rect(linewidth = 0.7))
