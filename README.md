@@ -60,20 +60,23 @@ The shiny applications in this repository are meant to accompany the [EDS 430 - 
     |     └── gentoo.jpeg  
     |
     ├── testing-app/                                  # folder containing the code for an app to demo writing tests using {shinytest2}
-    |   └── app.R                                           # app code
-    |   └── tests/                                          # folder containint {shinytest2} test files
+    |   └── global.R                                       # packages, objects, etc. used by ui & server
+    |   └── ui.R                                           # user interface code
+    |   └── server.R                                       # server code
+    |   └── R/                                             # contains function scripts  
+    |   └── tests/                                          # folder containing {shinytest2} test files
     |      └── testthat.R                                     # test runner        
     |      └── testthat/                                      # folder containing tests
     |         └── setup-shinytest2.R                            # app support file information (automatically generated, even if no support files exist)
     |         └── test-shinytest2.R                             # {shinytest2} test
-    |         └── snaps/                                        # folder containing
-    |            └── sam-test-001.json                          # JSON representation of the state of app when app$expect_values() was called
-    |            └── sam-test-001_.png                          # screenshot of app when app$expect_values() was called
+    |         └── snaps/                                        # folder containing test snapshots
+    |            └── *.json                                         # JSON representation of the state of app when app$expect_values() was called
+    |            └── *_.png                                         # screenshot of app when app$expect_values() was called
     |
     ├── dashboard-css-app/                            # folder containing app used in inspecting/updating css demo
     |    └── global.R                                       # packages, objects, etc. used by ui & server
     |    └── ui.R                                           # user interface code
-    |    └── server.R                                       # server cde
+    |    └── server.R                                       # server code
     |    └── www/                                           # special directory in shiny for images, stylesheets, etc.
     |      └── styles.css                                      # css stylesheet 
     |
