@@ -1,6 +1,5 @@
 # load libraries ----
 library(shiny)
-library(shinyWidgets)
 library(tidyverse)
-library(markdown)
+library(shinyWidgets)
 library(palmerpenguins)

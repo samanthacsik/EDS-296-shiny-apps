@@ -1,0 +1,5 @@
+{
+  "output": {
+    "summary_table_output": "<table  class = 'table shiny-table table- spacing-s' style = 'width:auto;'>\n<thead> <tr> <th style='text-align: right;'> Mean Temperature (C) <\/th> <th style='text-align: right;'> Mean Precipitation (cm) <\/th> <th style='text-align: right;'> Mean Wind Speed (km/hr) <\/th> <th style='text-align: right;'> Mean Pressure (inHg) <\/th> <th style='text-align: right;'> Total Number of Observations <\/th>  <\/tr> <\/thead> <tbody>\n  <tr> <td align=\"right\"> 11.00 <\/td> <td align=\"right\"> 2.50 <\/td> <td align=\"right\"> 25.00 <\/td> <td align=\"right\"> 29.50 <\/td> <td align=\"right\">   4 <\/td> <\/tr>\n   <\/tbody> <\/table>"
+  }
+}

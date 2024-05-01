@@ -1,0 +1,12 @@
+{
+  "output": {
+    "summary_table_output": {
+      "message": "Your CSV does not have the expected column headers.",
+      "call": "NULL",
+      "type": [
+        "shiny.silent.error",
+        "validation"
+      ]
+    }
+  }
+}
