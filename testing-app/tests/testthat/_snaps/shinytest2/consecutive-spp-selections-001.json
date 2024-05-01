@@ -1,0 +1,12 @@
+{
+  "output": {
+    "scatterplot_output": {
+      "message": "Please select at least one penguin species to visualize data for.",
+      "call": "NULL",
+      "type": [
+        "shiny.silent.error",
+        "validation"
+      ]
+    }
+  }
+}

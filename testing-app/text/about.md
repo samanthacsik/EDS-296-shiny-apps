@@ -1,3 +1,0 @@
-## Regression testing for Shiny applications
-
-This app pairs with [EDS 430: Intro to Shiny](https://ucsb-meds.github.io/EDS-430-Intro-to-Shiny/) workshop materials ([part 6.2: testing](https://ucsb-meds.github.io/EDS-430-Intro-to-Shiny/course-materials/slides/part6.2-testing-slides.html#/title-slide)). You'll find a few different inputs / outputs on the following navbar tabs -- we'll be creating regression tests using the [`{shinytest2}` package](https://rstudio.github.io/shinytest2/) to check for consistent behavior over time.
