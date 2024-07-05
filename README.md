@@ -1,4 +1,4 @@
-# EDS430-shiny-app
+# Teaching apps for EDS 296-1W (Intro to Shiny)
 
 ## What's in this repo?
 
