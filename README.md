@@ -2,7 +2,7 @@
 
 ## What's in this repo?
 
-The shiny applications in this repository are meant to accompany the [EDS 430 - Intro to Shiny course website](https://ucsb-meds.github.io/EDS-430-Intro-to-Shiny/) created for the Bren School's Master of Environmental Science (MEDS) program.
+The shiny applications in this repository are meant to accompany the [EDS 296-1W - Intro to Shiny course website](https://ucsb-meds.github.io/EDS-296-Intro-to-Shiny/) created for the Bren School's Master of Environmental Science (MEDS) program.
 
 ## Repository structure:
 
@@ -97,5 +97,4 @@ The shiny applications in this repository are meant to accompany the [EDS 430 - 
     |
     ├── README.md
     ├── .gitignore        
-    ├── .DS_store
-    └── EDS430-shiny-app.Rproj
+    └── EDS296-shiny-app.Rproj
