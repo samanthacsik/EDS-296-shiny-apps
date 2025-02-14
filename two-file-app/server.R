@@ -19,13 +19,24 @@ server <- function(input, output) {
 
     ggplot(trout_filtered_df(), aes(x = length_mm, y = weight_g, color = channel_type, shape = channel_type)) +
       geom_point(alpha = 0.7, size = 5) +
-      scale_color_manual(values = c("cascade" = "#2E2585", "riffle" = "#337538", "isolated pool" = "#DCCD7D",
-                                    "pool" = "#5DA899", "rapid" = "#C16A77", "step (small falls)" = "#9F4A96",
+      scale_color_manual(values = c("cascade" = "#2E2585", 
+                                    "riffle" = "#337538", 
+                                    "isolated pool" = "#DCCD7D",
+                                    "pool" = "#5DA899", 
+                                    "rapid" = "#C16A77", 
+                                    "step (small falls)" = "#9F4A96",
                                     "side channel" = "#94CBEC")) +
-      scale_shape_manual(values = c("cascade" = 15, "riffle" = 17, "isolated pool" = 19,
-                                    "pool" = 18, "rapid" = 8, "step (small falls)" = 23,
+      scale_shape_manual(values = c("cascade" = 15, 
+                                    "riffle" = 17, 
+                                    "isolated pool" = 19,
+                                    "pool" = 18, 
+                                    "rapid" = 8, 
+                                    "step (small falls)" = 23,
                                     "side channel" = 25)) +
-      labs(x = "Trout Length (mm)", y = "Trout Weight (g)", color = "Channel Type", shape = "Channel Type") +
+      labs(x = "Trout Length (mm)", 
+           y = "Trout Weight (g)", 
+           color = "Channel Type", 
+           shape = "Channel Type") +
       myCustomTheme()
 
   },
@@ -47,12 +58,13 @@ server <- function(input, output) {
   })
 
   # render the flipper length histogram ----
-  output$flipperLength_histogram_output <- renderPlot({
+  output$flipper_length_histogram_output <- renderPlot({
 
     ggplot(na.omit(island_df()), aes(x = flipper_length_mm, fill = species)) +
       geom_histogram(alpha = 0.6, position = "identity", bins = input$bin_num_input) +
       scale_fill_manual(values = c("Adelie" = "darkorange", "Chinstrap" = "purple", "Gentoo" = "cyan4")) +
-      labs(x = "Flipper length (mm)", y = "Frequency",
+      labs(x = "Flipper length (mm)", 
+           y = "Frequency",
            fill = "Penguin species") +
       myCustomTheme()
     

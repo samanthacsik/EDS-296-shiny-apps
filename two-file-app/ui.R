@@ -47,14 +47,16 @@ ui <- navbarPage(
                         sidebarPanel(
 
                           # channel type pickerInput ----
-                          pickerInput(inputId = "channel_type_input", label = "Select channel type(s):",
+                          pickerInput(inputId = "channel_type_input", 
+                                      label = "Select channel type(s):",
                                       choices = unique(clean_trout$channel_type),
                                       selected = c("cascade", "pool"),
-                                      options = pickerOptions(actionsBox = TRUE),
-                                      multiple = TRUE), # END channel type pickerInput
+                                      multiple = TRUE,
+                                      options = pickerOptions(actionsBox = TRUE)), # END channel type pickerInput
 
                           # section checkboxGroupInput ----
-                          checkboxGroupButtons(inputId = "section_input", label = "Select a sampling section(s):",
+                          checkboxGroupButtons(inputId = "section_input", 
+                                               label = "Select a sampling section(s):",
                                                choices = c("clear cut forest", "old growth forest"),
                                                selected = c("clear cut forest", "old growth forest"),
                                                individual = FALSE, justified = TRUE, size = "sm",
@@ -87,19 +89,19 @@ ui <- navbarPage(
                           pickerInput(inputId = "penguin_island_input", label = "Select an island(s):",
                                       choices = c("Torgersen", "Dream", "Biscoe"),
                                       selected = c("Torgersen", "Dream", "Biscoe"),
-                                      options = pickerOptions(actionsBox = TRUE),
-                                      multiple = TRUE), # END island pickerInput
+                                      multiple = TRUE,
+                                      options = pickerOptions(actionsBox = TRUE)), # END island pickerInput
 
                           # bin number sliderInput ----
                           sliderInput(inputId = "bin_num_input", label = "Select number of bins:",
-                                      value = 25, max = 100, min = 1), # END bin number sliderInput
+                                      min = 1, max = 100, value = 25), # END bin number sliderInput
 
                         ), # END penguin plot sidebarPanel
 
                         # penguin plot mainPanel ----
                         mainPanel(
 
-                          plotOutput(outputId = "flipperLength_histogram_output") |> 
+                          plotOutput(outputId = "flipper_length_histogram_output") |> 
                             withSpinner(color = "#4BA4A4", type = 4, size = 2)
 
                         ) # END penguin plot mainPanel
